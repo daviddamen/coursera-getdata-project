@@ -1,4 +1,6 @@
-coursera-getdata-project
-========================
+# Getting and Cleaning Data - Course Project
 
-Course project repo for the "Getting and Cleaning Data" course on Coursera for the Data Science Specialization.
+## Start conditions
+
+The run_analysis.R script checks if the data is already present and, if not,
+downloads and unzips it. 
