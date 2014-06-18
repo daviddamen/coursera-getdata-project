@@ -30,9 +30,9 @@ activity_train <- read.table(paste0(data_dir, "train/y_train.txt"),
                              col.names=c("index"))
 
 subjects_test <- read.table(paste0(data_dir, "test/subject_test.txt"),
-                            col.names=c("subjectId"))
+                            col.names=c("subject"))
 subjects_train <- read.table(paste0(data_dir, "train/subject_train.txt"),
-                             col.names=c("subjectId"))
+                             col.names=c("subject"))
 
 #
 # The two measurement data frames are first combined, then filtered such that
@@ -58,4 +58,8 @@ subjects <- rbind(subjects_test, subjects_train)
 # into a single tidy data frame.
 #
 tidy <- cbind(measurements, activity$label, subjects)
+names(tidy)[names(tidy)=="activity$label"] <- "activity"
 
+#
+#
+#
