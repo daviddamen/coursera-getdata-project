@@ -29,6 +29,11 @@ activity_test <- read.table(paste0(data_dir, "test/y_test.txt"),
 activity_train <- read.table(paste0(data_dir, "train/y_train.txt"),
                              col.names=c("index"))
 
+subjects_test <- read.table(paste0(data_dir, "test/subject_test.txt"),
+                            col.names=c("subjectId"))
+subjects_train <- read.table(paste0(data_dir, "train/subject_train.txt"),
+                             col.names=c("subjectId"))
+
 #
 # The two measurement data frames are first combined, then filtered such that
 # only means and standard deviations of the measurements are retained.
@@ -44,8 +49,13 @@ activity <- rbind(activity_test, activity_train)
 activity$label <- apply(activity, 1, function(x) activity_labels$label[x])
 
 #
-# Both the measuremens and reported activities are merged into a single tidy 
-# data frame.
+# The two subjectId data frames are combined.
 #
-tidy <- cbind(measurements, activity$label)
+subjects <- rbind(subjects_test, subjects_train)
+
+#
+# All of the measuremens,reported activities and subject data frames are merged
+# into a single tidy data frame.
+#
+tidy <- cbind(measurements, activity$label, subjects)
 
