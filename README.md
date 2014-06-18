@@ -6,7 +6,7 @@ This repo contains the R script to create a tidy dataset from human activity
 measurements as captured through the sensors of a smartphone. It has been
 created for a course project for the Getting and Cleaning Data course on
 Coursera.  
-It does not use any external libraries, only base R.
+This script depends on the "reshape2" package.
 
 ## Script Overview
 
@@ -43,6 +43,9 @@ extracting only the mean and standard deviation columns from the combined data
 frame. This is followed by appending the two activity data frames to each other
 to which human readable activity labels are added.
 
-Finally, all of the combined measurement data frame, the human readable 
+All of the combined measurement data frame, the human readable 
 activity labels from the activity data frame and the subject ids are combined 
 to come up with the _tidy_ data frame.
+
+Finally, the "reshape2"-package is used to compute the means of all 
+measurements by user by activity.

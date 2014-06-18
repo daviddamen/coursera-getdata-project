@@ -61,5 +61,9 @@ tidy <- cbind(measurements, activity$label, subjects)
 names(tidy)[names(tidy)=="activity$label"] <- "activity"
 
 #
+# Finally, the "reshape2"-library is used to get the mean values of all 
+# measurements for each user for each activity.
 #
-#
+library(reshape2)
+melted <- melt(tidy, id.vars=c("activity", "subject"))
+tidy_means <- dcast(melted, subject + activity ~ variable, fun.aggregate=mean)
