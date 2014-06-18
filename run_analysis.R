@@ -71,4 +71,4 @@ tidy_means <- dcast(melted, subject + activity ~ variable, fun.aggregate=mean)
 #
 # Finally, we write the second tidy dataset to file to submit it to Coursera.
 #
-write.table(tidy_means, file="tidy.means.txt", row.names=FALSE)
+write.table(tidy_means, file="tidy_means.txt", row.names=FALSE)
