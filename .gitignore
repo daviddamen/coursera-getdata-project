@@ -1,6 +1,6 @@
 # Project-specific files
 UCI HAR Dataset*
-
+*.txt
 
 # History files
 .Rhistory

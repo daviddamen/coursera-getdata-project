@@ -49,3 +49,8 @@ to come up with the _tidy_ data frame.
 
 Finally, the "reshape2"-package is used to compute the means of all 
 measurements by user by activity.
+
+### Data storage
+
+In order to submit a tidy dataset for the Coursera assignment, the final 
+dataset (with the means) is written as a basic text file to _tidy.means.txt_
